@@ -7,6 +7,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -36,6 +37,7 @@ public class Controller implements Initializable {
     private DataOutputStream out;
     private boolean authentificated;
     private String nickName;
+    private final String TITLE = "GeekChat";
 
     private void setAutentificated(boolean autentificated) {
         this.authentificated = autentificated;
@@ -106,6 +108,7 @@ public class Controller implements Initializable {
 
     }
     private void setTitle(String nick){
-        textField.getScene().getWindow().
+
+        ((Stage)textField.getScene().getWindow()).setTitle(TITLE + " " + nick);
     }
 }
